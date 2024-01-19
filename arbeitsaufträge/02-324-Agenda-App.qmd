@@ -1,0 +1,130 @@
+---
+title: "Modul 324"
+subtitle: "Traktanden-App"
+format:
+  pdf:
+    code-fold: true
+    template: ../vorlagen/gbs.latex
+author: [Oliver Lux]
+# date: "2023-12-14"
+keywords: [SvelteKit, Traktanden]
+titlepage-rule-height: 0
+titlepage: false
+titlepage-background: ../vorlagen/background.pdf
+toc: false
+toc-own-page: false
+number-sections: true
+
+---
+
+# Traktanden-App mit SvelteKit
+
+## Installation SvelteKit und Grundgerüst Traktanden-App erzeugen
+
+1. Installation von npm
+2. Mit SvelteKit das Grundgerüst erzeugen `npm create svelte@latest my-agenda-app`
+3. Es startet ein Wizard, bei dem "Skeleton project" ausgewählt wird. Danach "JavaScript with JSDoc comments" wählen und verschiedene Tools dazu wählen: 
+  - ESLint (Linter)
+  - Playwright (Testtool)
+4. Mit der Konsole in das entsprechende Verzeichnis wechseln `cd my-agenda-app` und mit `npm install` alle Dependencies installieren
+5. Mit dem Befehl `npm run dev -- --open` wird das Projekt gestartet und automatisch im Browser geöffnet.
+
+## Aufbau der Agenda-App
+
+Im Modul 324 steht nicht die Programmierung im Vordergrund, sondern das Aufbauen einer CI/CD Umgebung. Trotzdem ist der Code sehr einfach zu verstehen und kann schnell angepasst werden. 
+Öffnen Sie im Editor die Datei `src/routes/+page.svelte` und fügen Sie den folgenden Code dazu:
+
+```
+<script>
+    let agenda = [];
+    let newAgenda = '';
+
+    function addAgenda() {
+      if (newAgenda) {
+        agenda = [...agenda, newAgenda];
+        newAgenda = '';
+      }
+    }
+
+    function removeAgenda(index) {
+      agenda.splice(index, 1);
+      agenda = [...agenda]; // Update the agenda array to trigger reactivity
+    }
+  </script>
+
+  <main>
+    <h1>SvelteKit Agendas App</h1>
+    <div class="add-agenda">
+      <input class="agenda-input" bind:value={newAgenda} placeholder="Add a new agenda" />
+      <button class="add-button" on:click={addAgenda}>Add</button>
+    </div>
+
+    <ul class="agenda-list">
+      {#each agenda as agenda, index (agenda)}
+        <li class="agenda-item">
+          {agenda}
+          <button class="remove-button" on:click={() => removeAgenda(index)}>Remove</button>
+        </li>
+      {/each}
+    </ul>
+  </main>
+
+  <style>
+    main {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .add-agenda {
+      margin-bottom: 20px;
+    }
+
+    .agenda-input {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .add-button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .agenda-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .agenda-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .remove-button {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  ``` 
+
+
+## Starten der Agenda-App
+
+Mit `npm run dev` starten Sie die App und unter 127.0.0.1:5173 können Sie diese im Browser aufrufen.
