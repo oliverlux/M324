@@ -1,0 +1,46 @@
+---
+title: "Modul 324"
+subtitle: "Anforderungen verwalten - V.1.0.0"
+format:
+  pdf:
+    code-fold: true
+    template: ../vorlagen/gbs.latex
+author: [Oliver Lux]
+# date: "2023-12-14"
+keywords: [Anforderungen verwalten]
+titlepage-rule-height: 0
+titlepage: false
+titlepage-background: ../vorlagen/background.pdf
+toc: false
+toc-own-page: false
+number-sections: true
+
+---
+
+# Anforderungen verwalten | Plan
+
+\colorbox{darkgray}{\color{white}Aufgabe: Tool zum Verwalten von Anfoderungen | {\faUser} Gruppenarbeit | {\faClock} 90' }
+
+1. Fügen Sie den Quellcode einer Webapplikation in Ihr Repository ein.
+2. Informieren Sie sich, wie man Anforderungen verwalten kann. Suchen Sie dabei Tools, die Sie in diesem Prozess unterstützen können. Denken Sie dabei auch an das Modul 426. Informieren Sie sich über mehrere Tools.
+3. Vergleichen Sie die unterschiedlichen Tools zur Verwaltung von Anforderungen, bewerten Sie diese und entscheiden Sie sich schlussendlich in der Gruppe für eine Variante. Begründen Sie Ihren Entscheid.
+4. Überlegen Sie sich neue Anforderungen für Ihre Webapplikation und nehmen Sie diese Anforderungen in Ihrem ausgewählten Tool auf. 
+5. Am Ende werden Sie Ihr gewähltes Tool kurz der Klasse vorstellen und die Gründe für Ihre Entscheidung offen legen. 
+
+\begin{tikzpicture}
+
+\draw[step=0.5cm,gray,very thin] (-2,-2) grid (15,10);
+
+\end{tikzpicture}
+
+\pagebreak
+
+
+::: {.callout-warning icon=false}
+
+# **Portfolio**
+
+1. Dokumentieren Sie in Ihrem Portfolio die verschiedenen Tools, die Sie angeschaut haben. Beschreiben Sie Ihre Bewertungskriterien und zeigen Sie transparent, wie Sie zu Ihrer Entscheidung des gewählten Tools zur Verwaltung von Anforderungen gekommen sind. 
+2. Zeigen Sie in Ihrem Portfolio, welche zusätzlichen Anforderungen Sie zur bestehenden Webapplikation aufgenommen haben und wie sie diese in Ihrem gewählten Tool verwalten. 
+
+:::
