@@ -8,4 +8,4 @@ Informationen zu Quarto sind unter [https://quarto.org/](https://quarto.org/) zu
 
 ## Präsentationen 
 
-Präsentationen können aus Markdown mit Marp gerendert werden.
+Präsentationen können aus Markdown mit Marp gerendert werden. Daraus werden PDFs erstellt.
